@@ -12,7 +12,7 @@
 
 dictionary = {}
 while True:
-    print("1.add or update a word\n 2.retrieve a word's defination\n 3.delete a word\n 4.view all words\n 5.exit")
+    print("1.add or update a word\n 2.retrieve a word's defination\n 3.delete a word\n 4.view all words\n 5.check if a word exists\n 6.clear the dicitionary\n 7.Count number of words\n 8.exit")
     option = int(input("choose from numbers (1-5):"))
     if option == 1:
         key = input("Enter word:")
@@ -29,15 +29,29 @@ while True:
         key = input("Enter word:")
         if key in dictionary:
             del dictionary[key]
-            print(dictionary[key])
+            print(dictionary)
         else:
             print("word not found:")
 
     elif option == 4:
         for i in dictionary:
           print(i,dictionary[i])
-    
+
     elif option == 5:
+        key= input("Enter word to check:")
+        if key in dictionary:
+            print("Yes this word exists")
+        else:
+            print("No,the word does not exist.")
+
+    elif option == 6:
+        dictionary.clear()
+        print("Dictionary cleared.")
+
+    elif option == 7:
+        print(f"There are {len(dictionary)} words in the dictionary.")
+    
+    elif option == 8:
         print("Bye!")
         break
     else :
